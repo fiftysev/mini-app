@@ -12,6 +12,8 @@ import Locations from "./panels/Locations";
 import "@vkontakte/vkui/dist/vkui.css";
 
 import Home from "./panels/Home";
+import Settings from "./panels/Settings";
+import Game from "./panels/Game";
 
 const App = () => {
   const [scheme, setScheme] = useState("bright_light");
@@ -38,6 +40,8 @@ const App = () => {
               <View activePanel={activePanel}>
                 <Home id="home" go={go}/>
                 <Locations id="locations" go={go}/>
+                <Game id="game" go={go}/>
+                <Settings id="settings" go={go}/>
               </View>
             </SplitCol>
           </SplitLayout>
