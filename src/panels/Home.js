@@ -9,12 +9,13 @@ import {
   TabbarItem,
 } from "@vkontakte/vkui";
 import { Icon28LocationOutline } from "@vkontakte/icons";
+import Locations from "./Locations";
 
 const Home = ({ id, go, fetchedUser }) => (
   <Panel id={id}>
     <PanelHeader>Шпион</PanelHeader>
     <Tabbar>
-      <TabbarItem text="Локации" data-to="locations">
+      <TabbarItem text="Локации" data-to="locations" onClick={go}>
         <Icon28LocationOutline />
       </TabbarItem>
     </Tabbar>

@@ -15,7 +15,7 @@ import Home from "./panels/Home";
 
 const App = () => {
   const [scheme, setScheme] = useState("bright_light");
-  const [activePanel, setActivePanel] = useState("locations");
+  const [activePanel, setActivePanel] = useState("home");
 
   useEffect(() => {
     bridge.subscribe(({ detail: { type, data } }) => {
@@ -36,7 +36,8 @@ const App = () => {
           <SplitLayout>
             <SplitCol>
               <View activePanel={activePanel}>
-                <Locations id="locations" go={go} />
+                <Home id="home" go={go}/>
+                <Locations id="locations" go={go}/>
               </View>
             </SplitCol>
           </SplitLayout>
