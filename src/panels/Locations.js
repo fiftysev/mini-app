@@ -3,7 +3,6 @@ import {Panel, PanelHeader, PanelHeaderBack} from "@vkontakte/vkui";
 import { locations } from "../utils/locations";
 import LocationsList from "../components/LocationsList";
 import PropTypes from "prop-types";
-import Home from "./Home";
 
 const Locations = ({ id, go }) => {
   return (

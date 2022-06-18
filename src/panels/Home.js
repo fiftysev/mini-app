@@ -10,13 +10,18 @@ import {
   TabbarItem,
 } from "@vkontakte/vkui";
 import {Icon28LocationOutline, Icon28SettingsOutline} from "@vkontakte/icons";
-import Locations from "./Locations";
+import useStore from "../store/store";
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go, fetchedUser }) => {
+  const newGame = useStore(state => state.newGame);
+  return(
   <Panel id={id}>
     <PanelHeader>Шпион</PanelHeader>
     <Div style={{margin: "auto", width: "75%"}}>
-      <Button style={{width: "100%", height: "50px"}} onClick={go} data-to="game">Начать игру</Button>
+      <Button style={{width: "100%", height: "50px"}} onClick={(e) => {
+        go(e);
+        newGame();
+      }} data-to="game">Начать игру</Button>
     </Div>
     <Tabbar>
       <TabbarItem text="Локации" data-to="locations" onClick={go}>
@@ -27,7 +32,7 @@ const Home = ({ id, go, fetchedUser }) => (
       </TabbarItem>
     </Tabbar>
   </Panel>
-);
+)};
 
 Home.propTypes = {
   id: PropTypes.string.isRequired,
