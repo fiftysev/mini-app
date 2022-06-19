@@ -16,6 +16,7 @@ import Settings from "./panels/Settings";
 import Game from "./panels/Game";
 import CountdownPanel from "./panels/Countdown";
 import Results from "./panels/Results";
+import LocationAdd from "./panels/LocationAdd";
 
 const App = () => {
   const [scheme, setScheme] = useState("bright_light");
@@ -46,6 +47,7 @@ const App = () => {
                 <Settings id="settings" go={go}/>
                 <CountdownPanel id="countdown" go={go}/>
                 <Results id="results" go={go}/>
+                <LocationAdd id="location-add" go={go}/>
               </View>
             </SplitCol>
           </SplitLayout>

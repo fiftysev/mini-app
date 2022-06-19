@@ -1,5 +1,6 @@
 import create from "zustand";
 import _ from "lodash";
+import {v4} from "uuid";
 import {locations} from "../utils/locations";
 
 const initialPlayersState = [
@@ -16,8 +17,14 @@ const useStore = create((set) => ({
     locations: locations,
     currentPlayer: {},
     spy: {},
+    addLocation: (name, img) => set((state) => {
+      state.locations.push({id: v4(), name, img})
+      return {
+        ...state
+      }
+    }),
     updatePlayer: (id, name) => set((state) => {
-      const idx  = state.players.findIndex(value => value.id === id);
+      const idx = state.players.findIndex(value => value.id === id);
       if (idx === -1) {
         state.players.push({id, name, isSpy: false});
       } else {
