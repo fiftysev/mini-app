@@ -15,10 +15,10 @@ const useStore = create((set) => ({
       let playerCards = [];
       const location = _.sample(state.locations);
       for (let i = 0; i < state.playersCount; i++) {
-        playerCards.push({id: i, location, isSpy: false})
+        playerCards.push({id: i, location: location.name, isSpy: false})
       }
       const randomId = _.random(0, state.playersCount - 1)
-      playerCards[randomId].location.name = "???";
+      playerCards[randomId].location = "???";
       playerCards[randomId].isSpy = true;
       return {
         ...state,
@@ -27,7 +27,7 @@ const useStore = create((set) => ({
       }
     }),
     next: () => set((state) => {
-      if (state.currentPlayer.id + 1 === state.playersCount) {
+      if (state.players[state.currentPlayer.id + 1] === undefined) {
         throw new Error("Out of bounds!")
       }
       return {

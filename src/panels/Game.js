@@ -12,6 +12,7 @@ const Game = ({id, go}) => {
   const onClick = (e) => {
     try {
       next()
+      setFlipped(false);
     } catch (err) {
       console.error(e);
       go(e);
@@ -30,11 +31,11 @@ const Game = ({id, go}) => {
           <p>Нажатие перевернет карточку!</p>
         </Card>
         <Card className={`${styles.inner__card} ${styles.back}`} mode="shadow" onClick={onCardClick}>
-          <p>Локация: {currentPlayer.location.name}</p>
+          <p>Локация: {currentPlayer.location}</p>
           {currentPlayer.isSpy && <p>Вы шпион!</p>}
         </Card>
       </ReactCardFlip>
-      <Button onClick={onClick} data-to="home">Следующая карточка</Button>
+      <Button style={{height: "50px", width: "50%", margin: "0 auto"}} onClick={onClick} data-to="home">Следующая карточка</Button>
     </Panel>
   )
 }
