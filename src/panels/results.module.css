@@ -1,0 +1,16 @@
+.layout {
+    display: grid;
+    height: 75vh;
+    align-items: center;
+    place-items: center;
+}
+
+.result_text {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.btn {
+    width: 75%;
+    height: 50px;
+}

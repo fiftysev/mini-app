@@ -11,12 +11,13 @@ const Game = ({id, go}) => {
   const next = useStore(state => state.next);
   const onClick = (e) => {
     try {
+      console.log(currentPlayer);
       next()
       setFlipped(false);
     } catch (err) {
       console.error(e);
-      go(e);
       endGame();
+      go(e);
     }
   }
   const onCardClick = (e) => {

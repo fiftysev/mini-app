@@ -11,7 +11,7 @@ const Renderer = ({hours, minutes, seconds, completed, go}) => {
     return (
       <div className={styles.layout}>
         <p className={styles.heading}>Время вышло!</p>
-        <Button className={styles.btn} onClick={go} data-to="home">Перейти к результатам</Button>
+        <Button className={styles.btn} onClick={go} data-to="results">Перейти к результатам</Button>
       </div>)
   }
   return (
@@ -19,7 +19,7 @@ const Renderer = ({hours, minutes, seconds, completed, go}) => {
       <p className={styles.heading}>Время пошло!</p>
       <p className={styles.timer}>
         {padStart(minutes.toString(), 2, '0')}:{padStart(seconds.toString(), 2, '0')}
-        <Button className={styles.btn} onClick={go} data-to="home">Завершить раунд</Button>
+        <Button className={styles.btn} onClick={go} data-to="results">Завершить раунд</Button>
       </p>
     </div>
   )
