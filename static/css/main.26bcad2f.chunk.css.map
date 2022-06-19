@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/listitem.module.css"],"names":[],"mappings":"AAAA,0BACI,YAAa,CACb,kBACJ,CAEA,8BACI,WAAY,CACZ,gBACJ","file":"main.26bcad2f.chunk.css","sourcesContent":[".listitem {\n    display: grid;\n    place-items: center;\n}\n\n.listitem img {\n    width: 150px;\n    aspect-ratio: 4/3;\n}"]}
