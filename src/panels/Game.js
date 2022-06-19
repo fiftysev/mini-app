@@ -35,7 +35,7 @@ const Game = ({id, go}) => {
           {currentPlayer.isSpy && <p>Вы шпион!</p>}
         </Card>
       </ReactCardFlip>
-      <Button style={{height: "50px", width: "50%", margin: "0 auto"}} onClick={onClick} data-to="home">Следующая карточка</Button>
+      <Button className={styles.btn} onClick={onClick} data-to="countdown">Следующая карточка</Button>
     </Panel>
   )
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import bridge from "@vkontakte/vk-bridge";
 import PropTypes from "prop-types";
 
 import {
@@ -14,6 +15,7 @@ import useStore from "../store/store";
 
 const Home = ({ id, go, fetchedUser }) => {
   const newGame = useStore(state => state.newGame);
+
   return(
   <Panel id={id}>
     <PanelHeader>Шпион</PanelHeader>

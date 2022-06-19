@@ -39,6 +39,10 @@ const useStore = create((set) => ({
       ...state,
       players: [],
       currentPlayer: {}
+    })),
+    runCountdown: () => set((state) => ({
+      ...state,
+
     }))
   }))
 ;
